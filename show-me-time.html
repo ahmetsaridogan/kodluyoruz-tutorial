@@ -20,6 +20,8 @@
         <p>Js - Saat ve Karşılama</p>
     </div>
     <script>
+        const DAYS = [ "Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi", "Pazar"]
+
         function whoAreYou(){
             var name = prompt("Adınız nedir?");
             document.getElementById("my-name").innerText = name;
@@ -30,40 +32,15 @@
             var h = date.getHours();
             var m = date.getMinutes();
             var s = date.getSeconds();
-            var session = date.getDay();
+            var currentDay = date.getDay();
 
-            switch(session) {
-                case 1:
-                    session = "Pazartesi";
-                    break;
-                case 2:
-                    session = "Salı";
-                    break;
-                case 3:
-                    session = "Çarşamba";
-                    break;
-                case 4:
-                    session = "Perşembe";
-                    break;
-                case 5:
-                    session = "Cuma";
-                    break;
-                case 6:
-                    session = "Cumartesi";
-                    break;
-                case 7:
-                    session = "Pazar";
-                    break; 
-                default:
-                    session = 'Tatil :)'
-                    break;
-            }
+            currentDay = DAYS[currentDay-1] || 'Tatil :)'
 
             h = h < 10 ? "0" + h : h;
             m = m < 10 ? "0" + m : m;
             s = s < 10 ? "0" + s : s;
 
-            var time = h + ":" + m + ":" + s + " " + session;
+            var time = h + ":" + m + ":" + s + " " + currentDay;
             document.getElementById("show-me-time").innerText = time;
             document.getElementById("show-me-time").textContent = time;
 
