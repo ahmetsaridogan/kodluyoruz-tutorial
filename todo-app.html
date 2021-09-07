@@ -64,6 +64,7 @@
 
                 if(!confirm('Madde silinsin mi?')){
                     toastr.info('Yapılan madde silinmedi..')
+                    return
                 }
                 e.target.parentNode.removeChild(e.target);
                 toastr.succes('Yapılan madde silindi..')
